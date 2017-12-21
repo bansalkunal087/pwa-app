@@ -1,22 +1,23 @@
 // counter.reducer.ts
-import * as CounterActions from './app.action';
+import * as Users from './app.action';
 // import { State } from '@ngrx/store';
 
-export type Action = CounterActions.All;
+export type Action = Users.All;
 
 export const IntialState = {
-    'asdas': 3243,
-    'ada': 13
+    'users': null
 }
 
 export function counter(state:any = IntialState, action: Action) {
     switch (action.type) {
 
 
-        case CounterActions.INCREMENT: {
-            console.log('232');
+        case Users.GET_USERS: {
+            return Object.assign({}, ...state);
+        }
 
-            return Object.assign({}, ...state, {'sd':1});
+        case Users.GET_USERS_SUCCESS: {
+            return Object.assign({}, ...state, {users: action.payload});
         }
 
        

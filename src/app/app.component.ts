@@ -24,6 +24,6 @@ export class AppComponent {
         this.users = data.users;
     })
 
-    this.store.dispatch(new action.GetUsers());
+    // this.store.dispatch(new action.GetUsers());
   }
 }

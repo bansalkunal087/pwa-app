@@ -1,24 +1,19 @@
 import { Action } from '@ngrx/store';
 
-export const INCREMENT  = 'Counter_Increment';
-export const DECREMENT  = 'Counter_Decrement';
-export const RESET      = 'Counter_Reset';
+export const GET_USERS  = 'GET_USERS';
+export const GET_USERS_SUCCESS  = 'GET_USERS_SUCCESS';
 
-export class Increment implements Action {
-  readonly type = INCREMENT;
+
+export class GetUsers implements Action {
+  readonly type = GET_USERS;
 }
 
-export class Decrement implements Action {
-  readonly type = DECREMENT;
-}
-
-export class Reset implements Action {
-  readonly type = RESET;
+export class GetUsersSuccess implements Action {
+  readonly type = GET_USERS_SUCCESS;
 
   constructor(public payload: number) {}
 }
 
 export type All
-  = Increment
-  | Decrement
-  | Reset;
+  = GetUsers
+  | GetUsersSuccess;
